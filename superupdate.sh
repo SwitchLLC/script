@@ -116,15 +116,17 @@ setUbuntu(){
 	fi
 
 	[ -f /etc/apt/sources.list ] && rm /etc/apt/sources.list
-
-	echo "deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse" >>/etc/apt/sources.list
-	echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse" >>/etc/apt/sources.list
-	echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse" >>/etc/apt/sources.list
-	echo "deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse" >>/etc/apt/sources.list
-	echo "deb-src http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse" >>/etc/apt/sources.list
-	echo "deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse" >>/etc/apt/sources.list
-	echo "deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse" >>/etc/apt/sources.list
-	echo "deb-src http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse" >>/etc/apt/sources.list
+	
+	echo "deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial main multiverse restricted universe" >>/etc/apt/sources.list
+	echo "deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-backports main multiverse restricted universe" >>/etc/apt/sources.list
+	echo "deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-proposed main multiverse restricted universe" >>/etc/apt/sources.list
+	echo "deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-security main multiverse restricted universe" >>/etc/apt/sources.list
+	echo "deb http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-updates main multiverse restricted universe" >>/etc/apt/sources.list
+	echo "deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial main multiverse restricted universe" >>/etc/apt/sources.list
+	echo "deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-backports main multiverse restricted universe" >>/etc/apt/sources.list
+	echo "deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-proposed main multiverse restricted universe" >>/etc/apt/sources.list
+	echo "deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-security main multiverse restricted universe" >>/etc/apt/sources.list
+	echo "deb-src http://mirrors.ustc.edu.cn/ubuntu-ports/ xenial-updates main multiverse restricted universe" >>/etc/apt/sources.list
 
 	[ "$ubuntuVersion" == '14.04' ] && sed -i 's/xenial/trusty/'g /etc/apt/sources.list
 	[ "$ubuntuVersion" == '16.06' ] && echo -n ""
